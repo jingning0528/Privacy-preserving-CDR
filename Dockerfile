@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 RUN pip install mlflow
 
 # Run training script by default
-CMD ["python", "train.py"]
+CMD ["python", "run_recbole_cdr.py"]
