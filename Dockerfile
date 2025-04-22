@@ -1,15 +1,15 @@
-FROM python:3.8-slim
+FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu20.04
 
-# Set working directory
 WORKDIR /app
 
-# Copy all code
+RUN apt-get update && apt-get install -y \
+    python3-pip \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY . .
 
-# Install dependencies
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
-RUN pip install mlflow
+RUN pip3 install --upgrade pip
+RUN pip3 install -r requirements.txt
+RUN pip3 install mlflow
 
-# Run training script by default
-CMD ["python", "run_recbole_cdr.py"]
+CMD ["python3", "rec_recbole_cdr.py"]
