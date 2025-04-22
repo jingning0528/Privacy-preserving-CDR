@@ -12,4 +12,4 @@ RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 RUN pip3 install mlflow
 
-CMD ["python3", "rec_recbole_cdr.py"]
+CMD ["python3", "run_recbole_cdr.py"]
